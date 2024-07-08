@@ -1,0 +1,72 @@
+/*Stile del corpo della pagina*/
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: consolas;
+}
+
+/*Stile della lista*/
+ul {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+/*Stile degli elementi della lista*/
+ul li {
+    list-style-type: none;
+    margin: 0 20px;
+    font-size: 4em;
+}
+
+/*Stile della a degli elementi della lista*/
+ul li a {
+    position: relative;
+    color: #eee;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/*Stile della a degli elementi della lista in Before*/
+ul li a:before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    color: #262626;
+    white-space: nowrap;
+    transition: 0.5s ease-in-out;
+}
+
+/*Stile della a degli elementi della lista in Before in Hover*/
+ul:hover li a:before {
+    animation: animate2 1s steps(10) forwards;
+}
+
+ul li:hover a:before {
+    animation: animate1 1s steps(10) forwards;
+}
+
+/*Animazione 1*/
+@keyframes animate1 {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 351.88px;
+    }
+}
+
+/*Animazione 2*/
+@keyframes animate2 {
+    0% {
+        width: 351.88px;
+    }
+    100% {
+        width: 0;
+    }
+}
